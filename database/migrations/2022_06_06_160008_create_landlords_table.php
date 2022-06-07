@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,12 @@ class CreateLandlordsTable extends Migration
     {
         Schema::create('landlords', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('title')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('trn')->nullable();
+            $table->foreignIdFor(User::class,'user_id')->constrained();
             $table->timestamps();
         });
     }
