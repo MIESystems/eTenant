@@ -15,6 +15,13 @@ class CreateTenantsTable extends Migration
     {
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('type', [0, 1]);
+            $table->string('emirates_id')->nullable();
+            $table->string('passport')->nullable();
+            $table->string('visa')->nullable();
+            $table->string('license')->nullable();
+            $table->string('visa')->nullable();
             $table->timestamps();
         });
     }
