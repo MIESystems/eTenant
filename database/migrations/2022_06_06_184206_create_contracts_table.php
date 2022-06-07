@@ -15,7 +15,21 @@ class CreateContractsTable extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('landlord_id')->constrained();
+            $table->foreignId('building_id')->constrained();
+            $table->foreignId('tenant_id')->constrained();
+            $table->string('number');
+            $table->date('start');
+            $table->date('end');
+            $table->date('grace_start');
+            $table->date('grace_end');
+            $table->decimal('annual_value');
+            $table->decimal('discount');
+            $table->decimal('value');
+            $table->enum('type_id', [0, 1, 2])->comment('0=>residential,1=>commercial,2=>industrial');
+            $table->text('remarks');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

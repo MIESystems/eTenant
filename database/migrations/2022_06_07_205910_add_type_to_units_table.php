@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContractUnitTable extends Migration
+class AddTypeToUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateContractUnitTable extends Migration
      */
     public function up()
     {
-        Schema::create('contract_unit', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('contract_id')->constrained();
-            $table->foreignId('unit_id')->constrained();
-            $table->timestamps();
+        Schema::table('units', function (Blueprint $table) {
+            $table->integer('type_id')->after('building_id');
+            $table->index('type_id');
         });
     }
 
@@ -28,6 +26,9 @@ class CreateContractUnitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contract_unit');
+        Schema::table('units', function (Blueprint $table) {
+            $table->dropColumn('type_id');
+            $table->dropIndex('type_id');
+        });
     }
 }

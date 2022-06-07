@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvoiceLinesTable extends Migration
+class CreateReceiptLinesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateInvoiceLinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_lines', function (Blueprint $table) {
+        Schema::create('receipt_lines', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('receipt_id')->constrained();
+            $table->foreignId('installment_id')->constrained();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateInvoiceLinesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_lines');
+        Schema::dropIfExists('receipt_lines');
     }
 }

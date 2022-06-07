@@ -15,6 +15,12 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invoice_id')->constrained();
+            $table->foreignId('landlord_id')->constrained();
+            $table->foreignId('tenant_id')->constrained();
+            $table->foreignId('contract_id')->constrained();
+            $table->string('number');
+            $table->text('narration')->nullable();
             $table->timestamps();
         });
     }

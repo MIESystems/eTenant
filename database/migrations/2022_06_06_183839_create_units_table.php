@@ -18,13 +18,13 @@ class CreateUnitsTable extends Migration
             $table->id();
             $table->foreignIdFor(Building::class, 'building_id')->references('id')->on('buildings');
             $table->string('name');
-            $table->string('title')->nullable();
+            $table->string('code')->nullable();
             $table->string('size')->nullable();
             $table->string('permises')->nullable();
             $table->string('condition')->nullable();
             $table->string('description')->nullable();
             $table->index('permises');
-            $table->index('title');
+            $table->index('code');
             $table->index('name');
             $table->timestamps();
         });

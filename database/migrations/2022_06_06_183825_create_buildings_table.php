@@ -18,7 +18,7 @@ class CreateBuildingsTable extends Migration
             $table->id();
             $table->foreignIdFor(Landlord::class, 'landlord_id')->references('id')->on('landlords');
             $table->string('name');
-            $table->string('title')->nullable();
+            $table->string('code')->nullable();
             $table->integer('floor_count')->nullable();
             $table->string('size')->nullable();
             $table->string('makani')->nullable();
@@ -29,7 +29,7 @@ class CreateBuildingsTable extends Migration
             $table->string('description')->nullable();
             $table->index('makani');
             $table->index('permises');
-            $table->index('title');
+            $table->index('code');
             $table->index('name');
             $table->index('emirate');
             $table->timestamps();

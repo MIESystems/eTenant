@@ -20,8 +20,10 @@ class CreateLandlordsTable extends Migration
             $table->string('title')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('trn')->nullable();
-            $table->foreignIdFor(User::class,'user_id')->constrained();
+            $table->string('tax_registration_nubmer')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('bank_account_number')->nullable();
+            $table->foreignIdFor(User::class, 'user_id')->constrained();
             $table->timestamps();
         });
     }

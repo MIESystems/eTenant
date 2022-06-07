@@ -15,6 +15,10 @@ class CreateTenantDocumentTable extends Migration
     {
         Schema::create('tenant_document', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tenant_id')->constrained();
+            $table->string('number');
+            $table->date('expire_at');
+            $table->string('type_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->string('number');
+            $table->foreignId('landlord_id')->constrained();
+            $table->foreignId('tenant_id')->constrained();
+            $table->foreignId('contract_id')->constrained();
             $table->timestamps();
         });
     }
