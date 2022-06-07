@@ -2,9 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use App\Enums\TenantDocumentType;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
-class TenantDocument extends Pivot
+class TenantDocument extends Model
 {
-    //
+    use HasFactory, LogsActivity;
+
+    protected $fillable = [
+        'tenant_id',
+        'number',
+        'expire_at',
+        'type_id',
+    ];
+
+    protected $casts = [
+        'expire_at' => 'date',
+    ];
 }

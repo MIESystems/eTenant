@@ -4,8 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Receipt extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity;
+
+    protected $fillable = [
+        'invoice_id',
+        'landlord_id',
+        'tenant_id',
+        'contract_id',
+        'number',
+        'narration',
+    ];
 }

@@ -11,7 +11,6 @@ class Landlord extends Model
     use HasFactory, LogsActivity;
 
     protected $fillable = [
-        'id',
         'name',
         'title',
         'email',
