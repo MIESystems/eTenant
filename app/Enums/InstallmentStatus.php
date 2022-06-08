@@ -11,7 +11,10 @@ use BenSampo\Enum\Enum;
  */
 final class InstallmentStatus extends Enum
 {
-    const OptionOne =   0;
-    const OptionTwo =   1;
-    const OptionThree = 2;
+    const UNPAID =   0;
+    const PAID =   1;
+    const PARTIAL = 2;
+    const RETURNED = 3;
+    const CANCELLED = 4;
+    const HOLD = 5;
 }

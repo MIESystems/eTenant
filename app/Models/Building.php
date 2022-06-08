@@ -22,4 +22,18 @@ class Building extends Model
         'emirate',
         'description',
     ];
+
+    public function landlord()
+    {
+        return $this->belongsTo(Landlord::class);
+    }
+
+    public function contract()
+    {
+        return $this->hasMany(Contract::class);
+    }
+    public function unit()
+    {
+        return $this->hasMany(Unit::class);
+    }
 }

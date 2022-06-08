@@ -9,9 +9,9 @@ use BenSampo\Enum\Enum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class TenantDocumentType extends Enum
+final class InstallmentCategory extends Enum
 {
-    const OptionOne =   0;
-    const OptionTwo =   1;
-    const OptionThree = 2;
+    const INSTALLMENT =   0;
+    const SECURITY_DEPOSIT =   1;
+    const VAT = 2;
 }

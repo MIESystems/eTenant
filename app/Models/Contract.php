@@ -24,6 +24,7 @@ class Contract extends Model
         'value',
         'type_id',
         'remarks',
+        'status_id',
     ];
 
     protected $casts = [
@@ -32,4 +33,39 @@ class Contract extends Model
         'grace_start' => 'date',
         'grace_end' => 'date',
     ];
+
+    public function landlord()
+    {
+        return $this->belongsTo(Landlord::class);
+    }
+
+    public function building()
+    {
+        return $this->belongsTo(Building::class);
+    }
+
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
+
+    public function installments()
+    {
+        return $this->hasMany(Installment::class);
+    }
+
+    public function invoice()
+    {
+        return $this->hasOne(Invoice::class);
+    }
+
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
+    }
+
+    public function units()
+    {
+        return $this->belongsToMany(Unit::class);
+    }
 }

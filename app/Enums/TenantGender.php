@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class TenantGender extends Enum
 {
-    const OptionOne =   0;
-    const OptionTwo =   1;
-    const OptionThree = 2;
+    const MALE =   0;
+    const FEMALE =   1;
+    const ENTITY = 2;
 }

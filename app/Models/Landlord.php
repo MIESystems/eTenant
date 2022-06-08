@@ -20,4 +20,26 @@ class Landlord extends Model
         'bank_account_number',
         'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function building()
+    {
+        return $this->hasMany(Building::class);
+    }
+    public function contract()
+    {
+        return $this->hasMany(Contract::class);
+    }
+    public function invoice()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+    public function receipt()
+    {
+        return $this->hasMany(Receipt::class);
+    }
 }

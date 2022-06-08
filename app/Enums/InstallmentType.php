@@ -11,7 +11,7 @@ use BenSampo\Enum\Enum;
  */
 final class InstallmentType extends Enum
 {
-    const OptionOne =   0;
-    const OptionTwo =   1;
-    const OptionThree = 2;
+    const CASH =   0;
+    const CHECK =   1;
+    const BANK_TRANSFER = 2;
 }

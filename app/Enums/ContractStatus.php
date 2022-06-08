@@ -9,9 +9,11 @@ use BenSampo\Enum\Enum;
  * @method static static OptionTwo()
  * @method static static OptionThree()
  */
-final class ContractType extends Enum
+final class ContractStatus extends Enum
 {
-    const RESIDENTIAL =   0;
-    const COMMERCIAL =   1;
-    const INDUSTRIAL = 2;
+    const ACTIVE =   0;
+    const EXPIRED =   1;
+    const TERMINATED = 2;
+    const RENEWED = 3;
+    const PENDING = 4;
 }

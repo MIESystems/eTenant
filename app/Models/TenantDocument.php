@@ -21,4 +21,9 @@ class TenantDocument extends Model
     protected $casts = [
         'expire_at' => 'date',
     ];
+
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
 }

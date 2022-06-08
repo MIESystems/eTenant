@@ -20,4 +20,29 @@ class Tenant extends Model
         'nationality',
         'date_of_birth'
     ];
+
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
+    }
+
+    public function installments()
+    {
+        return $this->hasMany(Installment::class);
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(TenantDocument::class);
+    }
 }

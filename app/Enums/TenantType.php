@@ -11,7 +11,6 @@ use BenSampo\Enum\Enum;
  */
 final class TenantType extends Enum
 {
-    const OptionOne =   0;
-    const OptionTwo =   1;
-    const OptionThree = 2;
+    const PERSON =   0;
+    const COMPANY =   1;
 }

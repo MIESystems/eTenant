@@ -26,4 +26,14 @@ class Installment extends Model
     protected $casts = [
         'document_date' => 'date',
     ];
+
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
+
+    public function contract()
+    {
+        return $this->belongsTo(Contract::class);
+    }
 }
