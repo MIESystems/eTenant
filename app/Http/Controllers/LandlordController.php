@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Form\LandlordForm;
 use App\Models\Landlord;
 use Illuminate\Http\Request;
+use Kris\LaravelFormBuilder\FormBuilder;
 
 class LandlordController extends Controller
 {
@@ -22,9 +24,13 @@ class LandlordController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FormBuilder $formBuilder)
     {
-        //
+        $form = $formBuilder->create(LandlordForm::class, [
+            'method' => 'POST',
+            'url' => route('landlord.store'),
+        ]);
+        return view('common.form', compact('form'));
     }
 
     /**

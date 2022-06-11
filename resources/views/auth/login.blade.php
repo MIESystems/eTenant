@@ -30,7 +30,7 @@
                     <!--begin::Input-->
                     <input
                         class="form-control form-control-lg @error('name') is-invalid @enderror @error('email') is-invalid @enderror form-control-solid"
-                        value="{{ old('name') }}" type="text" name="name" autocomplete="off" />
+                        value="{{ old('email') }}" type="text" name="email" autocomplete="off" />
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
